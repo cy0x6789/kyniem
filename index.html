@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anh & Em - Kỷ niệm ngày cưới</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <nav class="nav-dots" id="navDots">
+        <button class="nav-dot active" data-section="hero" title="Trang chủ"></button>
+        <button class="nav-dot" data-section="gallery" title="Thư viện ảnh"></button>
+        <button class="nav-dot" data-section="video" title="Video"></button>
+        <button class="nav-dot" data-section="timeline" title="Dòng thời gian"></button>
+        <button class="nav-dot" data-section="story" title="Câu chuyện"></button>
+        <button class="nav-dot" data-section="countdown" title="Thời gian bên nhau"></button>
+        <button class="nav-dot" data-section="footer" title="Cuối trang"></button>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <canvas id="heartCanvas" class="heart-canvas"></canvas>
+        <div class="hero-content">
+            <div class="heart-icon">
+                <div class="heart-shape">
+                    <div class="heart-left"></div>
+                    <div class="heart-right"></div>
+                </div>
+            </div>
+            <h1 class="couple-names">Anh & Em</h1>
+            <p class="subtitle">6 năm bên nhau</p>
+            <button class="scroll-btn" id="scrollBtn">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Khoảnh Khắc Của Chúng Ta</h2>
+            <div class="gallery-slider">
+                <div class="gallery-container" id="galleryContainer">
+                    <img src="photo\IMG_0845 - 13x18.jpg" alt="Ảnh cưới 1" class="gallery-image active">
+                    <img src="photo\IMG_0504 - 13x18.jpg" alt="Ảnh cưới 2" class="gallery-image">
+                    <img src="photo\IMG_0060.jpg" alt="Ảnh cưới 3" class="gallery-image">
+                </div>
+            </div>
+            <div class="gallery-dots" id="galleryDots"></div>
+        </div>
+    </section>
+
+    <section id="video" class="video-section">
+        <div class="container">
+            <h2 class="section-title">Video Kỷ Niệm Ngày Cưới</h2>
+            <div class="video-container" id="videoContainer">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80" alt="Video thumbnail" class="video-thumbnail" id="videoThumbnail">
+                <div class="video-overlay" id="videoOverlay">
+                    <button class="play-btn" id="playBtn">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <iframe id="videoIframe" class="video-iframe hidden" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Dòng Thời Gian Tình Yêu</h2>
+            <div class="timeline" id="timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item" data-index="0">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2003</span>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=400&q=80" alt="Lần Đầu Gặp Gỡ">
+                        </div>
+                        <h3 class="timeline-title">Lần Đầu Gặp Gỡ</h3>
+                        <p class="timeline-desc">Ngày định mệnh khi hai trái tim chạm nhau lần đầu tiên</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-index="1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">10/11/2017</span>
+                        <div class="timeline-image">
+                            <img src="photo\IMG_0945.JPG" alt="Yêu Nhau">
+                        </div>
+                        <h3 class="timeline-title">Yêu Nhau</h3>
+                        <p class="timeline-desc">Chính thức bên nhau, bắt đầu hành trình tình yêu</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-index="2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">22/12/2019</span>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=400&q=80" alt="Cầu Hôn">
+                        </div>
+                        <h3 class="timeline-title">Cầu Hôn</h3>
+                        <p class="timeline-desc">Khoảnh khắc anh quỳ xuống và em nói 'có'</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-index="3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">27/09/2020</span>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" alt="Ngày Cưới">
+                        </div>
+                        <h3 class="timeline-title">Ngày Cưới</h3>
+                        <p class="timeline-desc">Ngày trọng đại nhất - chúng ta nên duyên vợ chồng</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-index="4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">16/08/2021</span>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&q=80" alt="Kỷ Niệm 1 Năm">
+                        </div>
+                        <h3 class="timeline-title">Sản Phầm Đầu Tay</h3>
+                        <p class="timeline-desc">365 ngày bên nhau, yêu thương ngày càng sâu đậm</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-index="5">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Hiện tại</span>
+                        <div class="timeline-image">
+                            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=400&q=80" alt="Mãi Bên Nhau">
+                        </div>
+                        <h3 class="timeline-title">Mãi Bên Nhau</h3>
+                        <p class="timeline-desc">Và câu chuyện tình yêu của chúng ta vẫn tiếp tục...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="story-section">
+        <div class="container">
+            <h2 class="section-title">Câu Chuyện Của Chúng Ta</h2>
+            <div class="story-content">
+                <p>Những ngày qua bên nhau là những ngày đẹp nhất trong cuộc đời. Từ lúc chúng ta gặp nhau, tình yêu đã lan tỏa từng góc nhỏ trong trái tim.</p>
+                <p>Mỗi khoảnh khắc bên cạnh em, anh thấy cuộc sống trở nên ý nghĩa hơn. Tình yêu không chỉ là những lời nói hay mà là những hành động nhỏ hàng ngày, những cái nhìn tình cảm và những nụ cười chân thành.</p>
+                <p>Hôn nhân là một hành trình, không phải đích đến. Chúng ta sẽ tiếp tục xây dựng những ký ức đẹp, vượt qua mọi khó khăn cùng nhau, và yêu thương lẫn nhau từng ngày.</p>
+                <p class="story-ending">Cảm ơn em đã là người bạn đời của anh. Cảm ơn em đã chọn anh. Yêu em! <span class="heart-symbol">♥</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="countdown" class="countdown-section">
+        <div class="container">
+            <h2 class="section-title">Thời Gian Bên Nhau</h2>
+            <div class="countdown-grid">
+                <div class="countdown-box">
+                    <div class="countdown-value" id="days">0</div>
+                    <div class="countdown-label">Ngày Bên Nhau</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="hours">0</div>
+                    <div class="countdown-label">Giờ Yêu Thương</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="minutes">0</div>
+                    <div class="countdown-label">Phút Hạnh Phúc</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-value" id="seconds">0</div>
+                    <div class="countdown-label">Giây Ký Ức</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <svg class="footer-heart" width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <p class="footer-thanks">Cảm ơn vì những kỷ niệm đó</p>
+                <p class="footer-love">Với tất cả yêu thương</p>
+                <div class="footer-hearts">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
