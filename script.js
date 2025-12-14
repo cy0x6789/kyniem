@@ -1,5 +1,5 @@
 const START_DATE = new Date("2017-11-10");
-// const YOUTUBE_VIDEO_ID = "dQw4w9WgXcQ";
+const YOUTUBE_VIDEO_ID = "LZlCz-Wmyuk";
 
 document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
