@@ -193,8 +193,9 @@ function initVideo() {
     playBtn.addEventListener('click', function() {
         videoOverlay.style.display = 'none';
         videoThumbnail.style.display = 'none';
-        videoIframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&rel=0`;
+        videoIframe.src = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?rel=0&modestbranding=1`;
         videoIframe.classList.remove('hidden');
+        videoIframe.play?.();
     });
 }
 
