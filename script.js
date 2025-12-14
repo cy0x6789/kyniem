@@ -441,15 +441,16 @@ function initHeartParticles() {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+        const scale = canvas.width < 400 ? 0.8 : canvas.width < 768 ? 0.9 : 1;
         const amount = particleRate * deltaTime;
         for (let i = 0; i < amount; i++) {
             const pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
-            const dir = pos.clone().length(settings.particles.velocity);
+            const dir = pos.clone().length(settings.particles.velocity * scale);
             particles.add(
-                canvas.width / 2 + pos.x,
-                canvas.height / 2 - pos.y,
-                dir.x,
-                -dir.y
+                canvas.width / 2 + pos.x * scale,
+                canvas.height / 2 - pos.y * scale,
+                dir.x * scale,
+                -dir.y * scale
             );
         }
 
